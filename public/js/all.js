@@ -1,4 +1,4 @@
-function addUser(){
+ function addUser(){
             
     window.location.href = '/customers/add';
 }
