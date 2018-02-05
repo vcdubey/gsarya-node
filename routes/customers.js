@@ -23,6 +23,11 @@ exports.drawChart = function(req,res){
 exports.add = function(req, res){
   res.render('add_customer',{page_title:"Add "});
 };
+
+exports.registration = function(req, res){
+    res.render('student_registration',{page_title:"Student Registration Page"});
+};
+
 exports.edit = function(req, res){
     
   var id = req.params.id;

@@ -35,6 +35,7 @@ console.log("connected");
 
 app.get('/', routes.index);
 app.get('/customers', customers.list);
+app.get('/student_registration', customers.registration);
 app.get('/customers', customers.drawChart);
 app.get('/customers/add', customers.add);
 app.post('/customers/add', customers.save);
