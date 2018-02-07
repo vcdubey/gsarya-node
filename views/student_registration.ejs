@@ -9,7 +9,100 @@
       <div>
         <h1>Welcome to the Registration Page</h1>
       </div>
+      <div>
+      <form id="form1" runat="server">     
+        <table id="table1"; cellspacing="2px" cellpadding="5%"; align="center">  
+          <tr>  
+            <td  align="right" class="style1">Name:</td>  
+            <td class="style1"><input type="text" name="name" /></td>  
+          </tr>
+          <tr>  
+            <td  align="right" class="style1">Class:</td>  
+            <td class="style1"><input type="text" name="class" /></td>  
+          </tr>    
+          <tr>  
+            <td align="right">Roll No:</td>  
+            <td><input type="text" name="rollno" /></td>  
+          </tr>  
+          <tr>  
+            <td align="right">Mobile:</td>  
+            <td><input type="text" name="mob" /></td>  
+          </tr>  
+          <tr>  
+            <td align="right">Father Name:</td>  
+            <td><input type="text" name="father" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">Mother Name:</td>  
+            <td><input type="text" name="mother" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">DOB:</td>  
+            <td><input type="date" name="dob" /></td>  
+          </tr>   
+          <tr>  
+            <td valign="top" align="right">Email:</td>  
+            <td><input type="text" name="Email" /></td>  
+          </tr>  
+          <tr>  
+            <td align="right">Work Status</td>  
+            <td>
+              <input type="checkbox" name="vehicle" value="Bike" />Full Time  
+              <input type="checkbox" name="vehicle" value="Bike" /> Part Time  
+              <input type="checkbox" name="vehicle" value="Bike" />Per Dim  
+              <input type="checkbox" name="vehicle" value="Bike" />Others  
+            </td>  
+          </tr>  
+          <tr>  
+            <td align="right">Salary</td>  
+            <td><input type="text" name="Email" />  
+            <select name="cars">  
+            <option value="Rupees">Rupees</option>  
+            <option value="Euro">Euro</option>  
+            <option value="US Dollar" selected="selected">US Dollar</option>  
+            </select>  
+            <select name="time">  
+            <option value="Yearly" selected="selected">Yearly</option>  
+            <option value="Half Yearly">Half Yearly</option>  
+            </select>                  
+            </td>  
+          </tr>  
+          <tr>  
+            <td align="right">Experience(Years)</td>  
+            <td><input type="text" name="Experience" /></td>  
+          </tr>  
+          <tr>  
+          <td align="right">Locations</td>  
+          <td><input type="text" name="locations" /></td>  
+          </tr>  
+          <tr>  
+            <td align="right">Qualifications:</td>  
+            <td>  
+            <select name="drop1" size="4" id="Qualifiation" size="4" multiple="multiple" >  
+            <option value="1" >Any</option>  
+            <option value="2">High School</option>  
+            <option value="3">Associate</option>  
+            <option value="4">Pre Bachelors</option>  
+            <option value="5">Bachelors</option>  
+            </select>  
+            <input type="button" value="ADD>>" /><input type="button" value="<<Remove"/>  
+            <select name="drop2" id="SelectedQualifiation" size="4" multiple="multiple">  
+            <option value="1">Any</option>  
+            </select></br>  
+
+            </td>  
+          </tr>         
+          <tr>  
+            <td> <input type="button" value="Submit" align="right"/>  
+            <td> <input type="button" value="Reset" />         
+            </td>  
+          </tr>  
+        </table>   
+      </form>  
+
+      </div>
     </div>
+
   </div>
 
-  <%- include layouts/footer2.ejs %>
+<%- include layouts/footer2.ejs %>
