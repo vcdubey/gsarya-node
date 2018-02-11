@@ -27,7 +27,7 @@ app.use(
         user: 'root',
         password : 'root',
         port : 3306,
-        database:'mydb'
+        database:'gs_arya'
     },'request')
 );
 
@@ -35,7 +35,8 @@ console.log("connected");
 
 app.get('/', routes.index);
 app.get('/customers', customers.list);
-app.get('/student_registration', customers.registration);
+app.get('/student_registration', customers.insert_record);
+app.post('/student_registration', customers.save_record);
 app.get('/customers', customers.drawChart);
 app.get('/customers/add', customers.add);
 app.post('/customers/add', customers.save);

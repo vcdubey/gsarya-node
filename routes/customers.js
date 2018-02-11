@@ -24,8 +24,41 @@ exports.add = function (req, res) {
     res.render('add_customer', { page_title: "Add " });
 };
 
-exports.registration = function (req, res) {
+exports.insert_record = function (req, res) {
     res.render('student_registration', { page_title: "Student Registration Page" });
+};
+
+exports.save_record = function (req, res) {
+    var input = JSON.parse(JSON.stringify(req.body));
+    req.getConnection((err, connection) => {
+        if (err) console.log(err)
+        
+        var data = {
+
+            name: input.name,
+            class: input.class,
+            rollno: input.rollno,
+            studentmobile: input.mob,
+            email: input.email,
+            dob: input.dob,
+            fathername: input.father,
+            mothername: input.mother,
+            address: input.address,
+            fatheroccupation: input.foccupation
+            
+
+        };
+
+        var query = connection.query("INSERT INTO student1 set ? ", data, function (err, rows) {
+
+            if (err)
+                console.log("Error inserting : %s ", err);
+
+                console.log(rows);
+            //res.redirect('/customers');
+
+        });
+    })
 };
 
 exports.edit = function (req, res) {
