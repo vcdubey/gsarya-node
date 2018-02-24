@@ -19,6 +19,16 @@ exports.drawChart = function (req, res) {
 
 };
 
+exports.studentsList = function (req, res) {
+    req.getConnection(function (err, connection) {
+        connection.query('SELECT * FROM student1', function (err, rows) {
+            if (err)
+                console.log("Error Selecting : %s ", err);
+            res.render('student_list',{data:rows } );
+            
+        });
+    })
+};
 
 exports.add = function (req, res) {
     res.render('add_customer', { page_title: "Add " });
@@ -55,7 +65,7 @@ exports.save_record = function (req, res) {
                 console.log("Error inserting : %s ", err);
 
                 console.log(rows);
-            //res.redirect('/customers');
+            res.redirect('/student_list');
 
         });
     })
@@ -73,6 +83,25 @@ exports.edit = function (req, res) {
                 console.log("Error Selecting : %s ", err);
 
             res.render('edit_customer', { page_title: "Edit", data: rows });
+
+        });
+
+    });
+};
+
+exports.edit_record = function (req, res) {
+    console.log("hu");
+    var id = req.params.ID;
+    console.log("hu");
+
+    req.getConnection(function (err, connection) {
+
+        connection.query('SELECT * FROM student1 WHERE ID = ?', [id], function (err, rows) {
+
+            if (err)
+                console.log("Error Selecting : %s ", err);
+            console.log(rows);
+            res.render('edit_student', { page_title: "Edit", data: rows });
 
         });
 

@@ -1,0 +1,49 @@
+<%- include layouts/header2.ejs %>
+
+<link href="/../css/jquery.dynatable.css" rel="stylesheet">
+    <div id="content_header"></div>
+    <div id="site_content">
+    <div>
+        <section>
+            <div class="student_records">
+                <table style="width:100%" id ="my-table">
+                    <thead>
+                        <th>S. N. </th>
+                        <th>Name</th>
+                        <th>RollNo</th>
+                        <th>Class</th>
+                        <th>Father Name</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody class="table-body">
+                        <% if(data.length){          
+                            for(var i = 0;i < data.length;i++) { %>
+                            
+                            <tr>
+                                <td><%=(i+1)%></td>
+                                <td><%=data[i].Name%></td>
+                                <td><%=data[i].RollNo%></td>
+                                <td><%=data[i].Class%></td>
+                                <td><%=data[i].FatherName%></td>
+                                <td>
+                                    <a class="a-inside edit" href="../student_registration/edit/<%=data[i].ID%>">Edit</a>   
+                                </td>
+                            </tr>
+                         <% }
+                   
+                        }else{ %>
+                            <tr>
+                            <td>No user</td>
+                            </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/../js/jquery.dynatable.js"></script>
+    
+    <script type="text/javascript" src="/../js/student_list.js"></script>
+<%- include layouts/footer2.ejs %>

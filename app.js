@@ -37,11 +37,13 @@ app.get('/', routes.index);
 app.get('/customers', customers.list);
 app.get('/student_registration', customers.insert_record);
 app.post('/student_registration', customers.save_record);
+app.get('/student_list', customers.studentsList);
 app.get('/customers', customers.drawChart);
 app.get('/customers/add', customers.add);
 app.post('/customers/add', customers.save);
 app.get('/customers/delete/:id', customers.delete_customer);
-app.get('/customers/edit/:id', customers.edit); 
+app.get('/customers/edit/:id', customers.edit);
+app.get('/student_registration/edit/:ID', customers.edit_record); 
 app.post('/customers/edit/:id',customers.save_edit);
 app.use(app.router);
 http.createServer(app).listen(app.get('port'), function(){

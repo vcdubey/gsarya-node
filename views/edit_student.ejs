@@ -1,0 +1,97 @@
+<%- include layouts/header2.ejs %>
+
+  <div id="content_header"></div>
+  <div id="site_content">
+    <%- include layouts/sidebar.ejs %>
+
+    <div id="content">
+      <!-- insert the page content here -->
+      <div>
+        <h1>Welcome to the Registration Page</h1>
+      </div>
+      <div>
+      <form id="form1" method="post" action="/student_registration/edit/<%=data[0].ID%>">     
+        <table id="table1"; cellspacing="2px" cellpadding="5%"; align="center" width="70%">  
+          <tr>  
+            <td  align="right" class="style1">Name:</td>  
+            <td class="style1"><input type="text" name="name" value="<%=data[0].Name%>" /></td>  
+          </tr>
+          <tr>  
+            <td  align="right" class="style1">Class:</td>  
+            <td class="style1"><input type="text" name="class" value="<%=data[0].Class%>" /></td>  
+          </tr>    
+          <tr>  
+            <td align="right">Roll No:</td>  
+            <td><input type="text" name="rollno" /></td>  
+          </tr>  
+          <tr>  
+            <td align="right">Mobile:</td>  
+            <td><input type="text" name="mob" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">Email:</td>  
+            <td><input type="text" name="Email" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">DOB:</td>  
+            <td><input type="date" name="dob" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">Father Name:</td>  
+            <td><input type="text" name="father" value="<%=data[0].FatherName%>" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">Father Occupation:</td>  
+            <td><input type="text" name="foccupation" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">Father Mob:</td>  
+            <td><input type="text" name="fmob" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">Mother Name:</td>  
+            <td><input type="text" name="mother" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">Mother Occupation:</td>  
+            <td><input type="text" name="moccupation" /></td>  
+          </tr>
+          <tr>  
+            <td align="right">Mother Mob:</td>  
+            <td><input type="text" name="mmob" /></td>  
+          </tr>   
+          <tr>  
+            <td align="right">Address:</td>  
+            <td><textarea  name="address" rows="6" /></textarea></td>  
+          </tr>
+          <tr>  
+            <td align="right">Previous School info:</td>  
+            <td><textarea  name="prev_school" rows="6" /></textarea></td>  
+          </tr>
+          <tr>  
+            <td align="right">Document Submitted:</td>  
+            <td> 
+              <select name="isDocumentSubmitted">  
+              <option value="yes" selected="selected">Yes</option>   
+              <option value="no">No</option>  
+              </select>
+            </td>  
+          </tr>        
+          <tr>  
+          <td align="right">Qualifications:</td>  
+          <td><input type="text" name="qualifications" /></td>  
+          </tr>           
+          <tr>  
+            <td> <input type="button" value="Reset" align="right"/>  
+            <td> <input type="submit" name="submit" value="Submit" />         
+            </td>  
+          </tr>  
+        </table>   
+      </form>  
+
+      </div>
+    </div>
+
+  </div>
+
+<%- include layouts/footer2.ejs %>
