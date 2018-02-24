@@ -21,7 +21,7 @@ exports.drawChart = function (req, res) {
 
 exports.studentsList = function (req, res) {
     req.getConnection(function (err, connection) {
-        connection.query('SELECT * FROM student1', function (err, rows) {
+        connection.query('SELECT * FROM student', function (err, rows) {
             if (err)
                 console.log("Error Selecting : %s ", err);
             res.render('student_list',{data:rows } );
@@ -59,7 +59,7 @@ exports.save_record = function (req, res) {
 
         };
 
-        var query = connection.query("INSERT INTO student1 set ? ", data, function (err, rows) {
+        var query = connection.query("INSERT INTO student set ? ", data, function (err, rows) {
 
             if (err)
                 console.log("Error inserting : %s ", err);
@@ -96,7 +96,7 @@ exports.edit_record = function (req, res) {
 
     req.getConnection(function (err, connection) {
 
-        connection.query('SELECT * FROM student1 WHERE ID = ?', [id], function (err, rows) {
+        connection.query('SELECT * FROM student WHERE ID = ?', [id], function (err, rows) {
 
             if (err)
                 console.log("Error Selecting : %s ", err);
